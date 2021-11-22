@@ -1,7 +1,11 @@
 const express = require("express");
 const Router = express.Router();
-const checkAuth = require("../../middleware/auth");
+// const checkAuth = require("../../middleware/auth");
 
-const appointmentsController = require('../../controllers/appointmentsController/appointmentsController')
+const projectInfoController = require('../controllers/projectInfoController')
 
-Router.get('/getProjectsInfo',checkAuth.authorization,appointmentsController.getAppointmentDetails);
+Router.post('/save',projectInfoController.saveProjectInfo);
+// Router.get('/getProjectsInfo',projectInfoController.getProjectInfo);
+// Router.get('/getProjectsInfo',checkAuth.authorization,appointmentsController.getAppointmentDetails);
+
+module.exports = Router;

@@ -11,10 +11,8 @@ const projectDetailsSchema = new Schema({
         type: String,
         required: true
     }
-},{ timestamps: true})
+},{ timestamps: true });
 
 const ProjectDetails = mongoose.model('ProjectDetails',projectDetailsSchema);
 
-module.exports = {
-    ProjectDetails: ProjectDetails,
-}
+module.exports = ProjectDetails;

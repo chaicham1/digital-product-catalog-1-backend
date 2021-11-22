@@ -1,14 +1,14 @@
-const ProjectDetails = require('../Schemas/projectDetailsSchema')
+const ProjectDetails = require('../Schemas/projectDetailsSchema');
 
 module.exports = {
 
     saveProject: async(projectDetailsObj) => {
 
-        const project = new ProjectDetails({projectDetailsObj});
+        const project = new ProjectDetails(projectDetailsObj);
         project.save().then((result) =>{
             return result;
         }).catch((err) =>{
-            throw err;
+            console.log(err);
         });
     }
 }
