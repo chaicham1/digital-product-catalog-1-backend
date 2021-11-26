@@ -4,7 +4,11 @@ const connectDB = require("./config/db")
 const bodyParser = require("body-parser");
 
 const ProjectsInfoRouter = require("./routes/projectsInfoRouter");
-
+const RegistrationRouter = require("./routes/userRoutes/registration");
+const userRouter = require("./routes/userRoutes/userDetails");
+const AuthenticationRouter = require("./routes/userRoutes/authentication");
+const LoginRouter = require("./routes/userRoutes/login");
+const UserDetailsRouter = require("./routes/userRoutes/updateDetails");
 
 dotenv.config({path: './config/config.env'});
 
@@ -29,6 +33,12 @@ app.use((req, res, next) => {
   });
 
 app.use("/projects", ProjectsInfoRouter);
+app.use("/registration", RegistrationRouter);
+app.use("/authentication", AuthenticationRouter);
+app.use("/login", LoginRouter);
+app.use("/myDetails", UserDetailsRouter);
+app.use("/user", userRouter);
+
 
 const PORT = process.env.PORT || 5000
 
